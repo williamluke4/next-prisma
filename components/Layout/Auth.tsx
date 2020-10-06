@@ -8,17 +8,17 @@ export default function Auth() {
   if (session && session.user) {
     return (
       <Flex style={{ padding:"8px"}}>
-        <Divider flexGrow="1"/>
-        <Button isLoading={loading} position="relative" right="-10px" top="5px" zIndex="1" onClick={signOut}>Sign out</Button>
-        <Avatar name={session.user?.name} src={session.user.image} about={session.user.email} zIndex="2"/>
+        <Divider flexGrow={1}/>
+        <Button isLoading={loading} position="relative" right="-10px" top="5px" zIndex={1} onClick={signOut as any}>Sign out</Button>
+        <Avatar name={session.user?.name} src={session.user.image} about={session.user.email} zIndex={2}/>
   
       </Flex>
     );
   }
   return (
     <Flex as="div" align="center" justifyContent="space-around" padding="8px">
-      <Divider flexGrow="1"/>
-      <Button isLoading={loading} position="relative" left="-10px" top="5px" zIndex="1"  onClick={signIn}>Sign in</Button>
+      <Divider flexGrow={1}/>
+      <Button isLoading={loading} position="relative" left="-10px" top="5px" zIndex={1}  onClick={signIn as any}>Sign in</Button>
     </Flex>
   );
 }
