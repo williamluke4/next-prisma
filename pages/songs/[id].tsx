@@ -1,7 +1,6 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
 import { PrismaClient } from '../../db';
-import { InferGetStaticPropsType } from "next";
 
 const prisma = new PrismaClient();
 
@@ -33,7 +32,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default ({ song }: InferGetStaticPropsType<typeof getStaticProps>) => (
+export default ({ song }) => (
   <Box mt={8}>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
