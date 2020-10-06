@@ -50,6 +50,7 @@ exports.raw = raw
 **/
 
 path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
+path.join(__dirname, 'query-engine-rhel-openssl-1.0.x');
 
 /**
  * Annotation for `node-file-trace`
@@ -157,7 +158,8 @@ const config = {
     "provider": "prisma-client-js",
     "output": "/home/will/Prisma/next-prisma/db",
     "binaryTargets": [
-      "native"
+      "native",
+      "rhel-openssl-1.0.x"
     ],
     "previewFeatures": [],
     "config": {},
