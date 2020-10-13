@@ -20,12 +20,12 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.9.0-integration-nextjs-custom-output.7
- * Query Engine version: 65a22d3ff58e7a81f7915437096b9412a409d45e
+ * Prisma Client JS version: 2.9.0-integration-nextjs-custom-output.12
+ * Query Engine version: 369b3694b7edb869fad14827a33ad3f3f49bbc20
  */
 exports.prismaVersion = {
-  client: "2.9.0-integration-nextjs-custom-output.7",
-  engine: "65a22d3ff58e7a81f7915437096b9412a409d45e"
+  client: "2.9.0-integration-nextjs-custom-output.12",
+  engine: "369b3694b7edb869fad14827a33ad3f3f49bbc20"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -48,7 +48,6 @@ exports.raw = raw
  * Build tool annotations
  * In order to make `ncc` and `node-file-trace` happy.
 **/
-
 path.join(__dirname === '/' ? process.cwd() : __dirname, 'query-engine-debian-openssl-1.1.x');
 
 /**
@@ -163,8 +162,8 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.9.0-integration-nextjs-custom-output.7",
-  "engineVersion": "65a22d3ff58e7a81f7915437096b9412a409d45e"
+  "clientVersion": "2.9.0-integration-nextjs-custom-output.12",
+  "engineVersion": "369b3694b7edb869fad14827a33ad3f3f49bbc20"
 }
 config.document = dmmf
 config.dirname = __dirname === '/' ? process.cwd() : __dirname
