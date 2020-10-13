@@ -1,9 +1,9 @@
-import { PrismaClient, PrismaClientOptions } from './db';
 import { createHash, randomBytes } from 'crypto';
+import { klona } from 'klona';
+import LRU from 'lru-cache';
 import { CreateUserError } from 'next-auth/dist/lib/errors';
 import logger from 'next-auth/dist/lib/logger';
-import LRU from 'lru-cache'
-import { klona } from 'klona'
+import { PrismaClient, PrismaClientOptions } from './db';
 
 const sessionCache = new LRU({
   maxAge: 24 * 60 * 60 * 1000,
@@ -124,18 +124,19 @@ const Adapter = (config: Config) => {
     async function getUserByProviderAccountId(providerId, providerAccountId) {
       debug('GET_USER_BY_PROVIDER_ACCOUNT_ID', providerId, providerAccountId);
       try {
-        if(!providerId || !providerAccountId) return null
-        const account = await prisma[Account].findOne({where: {
-          providerId_providerAccountId: {
-            providerId: providerId,
-            providerAccountId: providerAccountId
-          },
+        if (!providerId || !providerAccountId) return null
+        const account = await prisma[Account].findOne({
+          where: {
+            providerId_providerAccountId: {
+              providerId: providerId,
+              providerAccountId: providerAccountId
+            },
 
-        },
-        include: {
-          user: true
-        }
-      })
+          },
+          include: {
+            user: true
+          }
+        })
         return account?.user
 
       } catch (error) {
@@ -208,7 +209,7 @@ const Adapter = (config: Config) => {
             providerId,
             providerType,
             accessTokenExpires,
-            user: {connect: {id: userId}}
+            user: { connect: { id: userId } }
           }
         });
         return
@@ -223,10 +224,12 @@ const Adapter = (config: Config) => {
       debug('UNLINK_ACCOUNT', userId, providerId, providerAccountId);
       try {
         return prisma[Account].delete({
-          where: {providerId_providerAccountId: {
-            providerAccountId:  providerAccountId,
-            providerId: providerId
-          } }
+          where: {
+            providerId_providerAccountId: {
+              providerAccountId: providerAccountId,
+              providerId: providerId
+            }
+          }
         });
       } catch (error) {
         logger.error('UNLINK_ACCOUNT_ERROR', error);
@@ -294,7 +297,7 @@ const Adapter = (config: Config) => {
           await prisma[Session].delete({ where: { sessionToken } });
           return null;
         }
-        
+
 
         session && sessionCache.set(session.sessionToken, session, maxAge(session.expires))
 
