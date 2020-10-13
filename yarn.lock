@@ -1185,15 +1185,15 @@
   resolved "https://registry.yarnpkg.com/@panva/asn1.js/-/asn1.js-1.0.0.tgz#dd55ae7b8129e02049f009408b97c61ccf9032f6"
   integrity sha512-UdkG3mLEqXgnlKsWanWcgb6dOjUzJ+XC5f+aWw30qrtjxeNUSfKX1cd5FBzOaXQumoe9nIqeZUvrRJS03HCCtw==
 
-"@prisma/cli@2.9.0-integration-nextjs-custom-output.3":
-  version "2.9.0-integration-nextjs-custom-output.3"
-  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.9.0-integration-nextjs-custom-output.3.tgz#9ee79666ceb70e1d0f3b3f898e1009593f3afe4f"
-  integrity sha512-SgKqZhGbUscEeVZGXNmbCGTDbO1eLA5hmA+pSdZ+/ZIMPJoG3gaGAOwUtzNz8XGwwl+7xto8DEtOGYyK7owYHA==
+"@prisma/cli@2.9.0-integration-nextjs-custom-output.6":
+  version "2.9.0-integration-nextjs-custom-output.6"
+  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.9.0-integration-nextjs-custom-output.6.tgz#9d9c10391ab2d8ab12d1a5ea5038c781c21a4dbf"
+  integrity sha512-MBInxhpSqlSUo90IHioDfb7XmqVqM66IK5m+pPw4PeiyeBetZh+1vxQuf2EogrG/4SCeQncXZyeILJTN3H0URw==
 
-"@prisma/client@2.9.0-integration-nextjs-custom-output.3":
-  version "2.9.0-integration-nextjs-custom-output.3"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.9.0-integration-nextjs-custom-output.3.tgz#75a760bdddee36171c45773ea519a4fff3b90c06"
-  integrity sha512-Ga4mcCc+wcfVTJJJoJsyUs5/ViVzog7oE/9tBXfecF6W8/fKeNXx/u5hwJSEqqJW4fwifh4kW6Gj+y89QSFIsg==
+"@prisma/client@2.9.0-integration-nextjs-custom-output.6":
+  version "2.9.0-integration-nextjs-custom-output.6"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.9.0-integration-nextjs-custom-output.6.tgz#191348e014d663a04ad654ec5d641651452d2989"
+  integrity sha512-uShLaeFRetnBhsLmfnVSNC67R9xkIQebpGh6DlfYdPM69ZXCfBG+qbtjF52yoC/SUoeml0UjgHxfya1SiBWM8A==
   dependencies:
     pkg-up "^3.1.0"
 

@@ -12,9 +12,7 @@ export default (props) => {
         My Songs
       </Heading>
       <List>
-        {songs && songs.map((song) => (
-          <Song key={song.id} {...song} />
-        ))}
+        {songs && songs.map((song) => <Song key={song.id} {...song} />)}
       </List>
     </>
   );

@@ -18,7 +18,8 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-function SongPage({song}) {
+/** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
+function SongPage({ song }) {
   return (
     <Box mt={8}>
       <Heading fontWeight="800">{song.name}</Heading>

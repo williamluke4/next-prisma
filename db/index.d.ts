@@ -26,8 +26,8 @@ export { PrismaClientValidationError }
 export { sql, empty, join, raw, Sql }
 
 /**
- * Prisma Client JS version: 2.9.0-integration-nextjs-custom-output.3
- * Query Engine version: bc00f40f17ea2d691411eb7b529ca1529b68dc80
+ * Prisma Client JS version: 2.9.0-integration-nextjs-custom-output.6
+ * Query Engine version: 65a22d3ff58e7a81f7915437096b9412a409d45e
  */
 export declare type PrismaVersion = {
   client: string
@@ -715,8 +715,8 @@ export interface AccountDelegate {
    * })
   **/
   findFirst<T extends FindFirstAccountArgs>(
-    args: Subset<T, FindFirstAccountArgs>
-  ): CheckSelect<T, Prisma__AccountClient<Account>, Prisma__AccountClient<AccountGetPayload<T>>>
+    args?: Subset<T, FindFirstAccountArgs>
+  ): CheckSelect<T, Prisma__AccountClient<Account | null>, Prisma__AccountClient<AccountGetPayload<T> | null>>
   /**
    * Find zero or more Accounts that matches the filter.
    * @param {FindManyAccountArgs=} args - Arguments to filter and select certain fields only.
@@ -1250,8 +1250,8 @@ export interface SessionDelegate {
    * })
   **/
   findFirst<T extends FindFirstSessionArgs>(
-    args: Subset<T, FindFirstSessionArgs>
-  ): CheckSelect<T, Prisma__SessionClient<Session>, Prisma__SessionClient<SessionGetPayload<T>>>
+    args?: Subset<T, FindFirstSessionArgs>
+  ): CheckSelect<T, Prisma__SessionClient<Session | null>, Prisma__SessionClient<SessionGetPayload<T> | null>>
   /**
    * Find zero or more Sessions that matches the filter.
    * @param {FindManySessionArgs=} args - Arguments to filter and select certain fields only.
@@ -1783,8 +1783,8 @@ export interface UserDelegate {
    * })
   **/
   findFirst<T extends FindFirstUserArgs>(
-    args: Subset<T, FindFirstUserArgs>
-  ): CheckSelect<T, Prisma__UserClient<User>, Prisma__UserClient<UserGetPayload<T>>>
+    args?: Subset<T, FindFirstUserArgs>
+  ): CheckSelect<T, Prisma__UserClient<User | null>, Prisma__UserClient<UserGetPayload<T> | null>>
   /**
    * Find zero or more Users that matches the filter.
    * @param {FindManyUserArgs=} args - Arguments to filter and select certain fields only.
@@ -2300,8 +2300,8 @@ export interface VerificationRequestDelegate {
    * })
   **/
   findFirst<T extends FindFirstVerificationRequestArgs>(
-    args: Subset<T, FindFirstVerificationRequestArgs>
-  ): CheckSelect<T, Prisma__VerificationRequestClient<VerificationRequest>, Prisma__VerificationRequestClient<VerificationRequestGetPayload<T>>>
+    args?: Subset<T, FindFirstVerificationRequestArgs>
+  ): CheckSelect<T, Prisma__VerificationRequestClient<VerificationRequest | null>, Prisma__VerificationRequestClient<VerificationRequestGetPayload<T> | null>>
   /**
    * Find zero or more VerificationRequests that matches the filter.
    * @param {FindManyVerificationRequestArgs=} args - Arguments to filter and select certain fields only.
@@ -2816,8 +2816,8 @@ export interface SongDelegate {
    * })
   **/
   findFirst<T extends FindFirstSongArgs>(
-    args: Subset<T, FindFirstSongArgs>
-  ): CheckSelect<T, Prisma__SongClient<Song>, Prisma__SongClient<SongGetPayload<T>>>
+    args?: Subset<T, FindFirstSongArgs>
+  ): CheckSelect<T, Prisma__SongClient<Song | null>, Prisma__SongClient<SongGetPayload<T> | null>>
   /**
    * Find zero or more Songs that matches the filter.
    * @param {FindManySongArgs=} args - Arguments to filter and select certain fields only.
@@ -3337,8 +3337,8 @@ export interface ArtistDelegate {
    * })
   **/
   findFirst<T extends FindFirstArtistArgs>(
-    args: Subset<T, FindFirstArtistArgs>
-  ): CheckSelect<T, Prisma__ArtistClient<Artist>, Prisma__ArtistClient<ArtistGetPayload<T>>>
+    args?: Subset<T, FindFirstArtistArgs>
+  ): CheckSelect<T, Prisma__ArtistClient<Artist | null>, Prisma__ArtistClient<ArtistGetPayload<T> | null>>
   /**
    * Find zero or more Artists that matches the filter.
    * @param {FindManyArtistArgs=} args - Arguments to filter and select certain fields only.
@@ -3854,8 +3854,8 @@ export interface PlaylistDelegate {
    * })
   **/
   findFirst<T extends FindFirstPlaylistArgs>(
-    args: Subset<T, FindFirstPlaylistArgs>
-  ): CheckSelect<T, Prisma__PlaylistClient<Playlist>, Prisma__PlaylistClient<PlaylistGetPayload<T>>>
+    args?: Subset<T, FindFirstPlaylistArgs>
+  ): CheckSelect<T, Prisma__PlaylistClient<Playlist | null>, Prisma__PlaylistClient<PlaylistGetPayload<T> | null>>
   /**
    * Find zero or more Playlists that matches the filter.
    * @param {FindManyPlaylistArgs=} args - Arguments to filter and select certain fields only.
