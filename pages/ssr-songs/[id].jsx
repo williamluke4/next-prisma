@@ -18,7 +18,6 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-/** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
 function SongPage({ song }) {
   return (
     <Box mt={8}>
