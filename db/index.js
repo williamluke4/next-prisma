@@ -144,7 +144,10 @@ const config = {
     "name": "client",
     "provider": "prisma-client-js",
     "output": "/home/will/Prisma/next-prisma/db",
-    "binaryTargets": [],
+    "binaryTargets": [
+      "rhel-openssl-1.0.x",
+      "native"
+    ],
     "previewFeatures": [],
     "config": {},
     "isCustomOutput": true
@@ -162,6 +165,7 @@ config.dirname =  config.generator.output ? config.generator.output : __dirname
  * In order to make `ncc` and `node-file-trace` happy.
 **/
 
+path.join(config.dirname, 'query-engine-rhel-openssl-1.0.x');
 path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
 
 /**
