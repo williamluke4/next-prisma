@@ -19,12 +19,18 @@ const {
 const path = require('path')
 const debug = debugLib('prisma-client')
 
+// TODO Remove
+const fs = require('fs');
+const { promisify } = require('util')
+const exists = promisify(fs.exists)
+const readdir = promisify(fs.readdir)
+
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.3
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.4
  * Query Engine version: 855b4a81be577dc615caeacf2ea903dce8f47a6a
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.3",
+  client: "2.10.0-integration-nextjs-custom-output.4",
   engine: "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 
@@ -153,11 +159,11 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.3",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.4",
   "engineVersion": "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 config.document = dmmf
-config.dirname =  config.generator.output ? config.generator.output : eval("__dirname")
+config.dirname =  config.generator.output ? config.generator.output : __dirname
 
 /**
  * Build tool annotations
@@ -165,11 +171,24 @@ config.dirname =  config.generator.output ? config.generator.output : eval("__di
 **/
 
 path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
+// TODO Remove
+const dirExists = fs.existsSync(config.dirname)
+if (dirExists) {
+  readdir(config.dirname).then((value) => {
+    value.forEach(v => {
+      console.log(v);
+    })
+  })
+} else {
+  console.log("Dir Could Not be found");
+}
+
 
 /**
  * Annotation for `node-file-trace`
 **/
 path.join(config.dirname , 'schema.prisma');
 console.log(path.join(config.dirname , 'schema.prisma'))
+
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
