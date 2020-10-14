@@ -20,11 +20,11 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.2
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.3
  * Query Engine version: 855b4a81be577dc615caeacf2ea903dce8f47a6a
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.2",
+  client: "2.10.0-integration-nextjs-custom-output.3",
   engine: "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 
@@ -153,11 +153,11 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.2",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.3",
   "engineVersion": "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 config.document = dmmf
-config.dirname =  config.generator.output ? config.generator.output : __dirname
+config.dirname =  config.generator.output ? config.generator.output : eval("__dirname")
 
 /**
  * Build tool annotations
@@ -170,6 +170,6 @@ path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
  * Annotation for `node-file-trace`
 **/
 path.join(config.dirname , 'schema.prisma');
-
+console.log(path.join(config.dirname , 'schema.prisma'))
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
