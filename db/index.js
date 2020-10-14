@@ -20,12 +20,12 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.9.0-integration-nextjs-custom-output.12
- * Query Engine version: 369b3694b7edb869fad14827a33ad3f3f49bbc20
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.2
+ * Query Engine version: 855b4a81be577dc615caeacf2ea903dce8f47a6a
  */
 exports.prismaVersion = {
-  client: "2.9.0-integration-nextjs-custom-output.12",
-  engine: "369b3694b7edb869fad14827a33ad3f3f49bbc20"
+  client: "2.10.0-integration-nextjs-custom-output.2",
+  engine: "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -43,17 +43,6 @@ exports.empty = empty
 exports.join = join
 exports.raw = raw
 
-
-/**
- * Build tool annotations
- * In order to make `ncc` and `node-file-trace` happy.
-**/
-path.join(__dirname === '/' ? process.cwd() : __dirname, 'query-engine-debian-openssl-1.1.x');
-
-/**
- * Annotation for `node-file-trace`
-**/
-path.join(__dirname === '/' ? process.cwd() : __dirname, 'schema.prisma');
 
 /**
  * Enums
@@ -162,11 +151,23 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.9.0-integration-nextjs-custom-output.12",
-  "engineVersion": "369b3694b7edb869fad14827a33ad3f3f49bbc20"
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.2",
+  "engineVersion": "855b4a81be577dc615caeacf2ea903dce8f47a6a"
 }
 config.document = dmmf
-config.dirname = __dirname === '/' ? process.cwd() : __dirname
+config.dirname =  config.generator.output ? config.generator.output : __dirname
+
+/**
+ * Build tool annotations
+ * In order to make `ncc` and `node-file-trace` happy.
+**/
+
+path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
+
+/**
+ * Annotation for `node-file-trace`
+**/
+path.join(config.dirname , 'schema.prisma');
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
