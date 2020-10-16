@@ -1,25 +1,27 @@
-{"errorType":"Runtime.UnhandledPromiseRejection","errorMessage":"Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
-This probably happens, because you built Prisma Client on a different platform.
-(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
-Searched Locations:
-  /.prisma/client
-  /vercel/workpath0/db
-  /
-  /vercel/workpath0/db
-  /var/task
-You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block
-in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,
-but something went wrong. That's suboptimal.
-Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","reason":{"errorType":"Error","errorMessage":"Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
-This probably happens, because you built Prisma Client on a different platform.
-(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
-Searched Locations:
-  /.prisma/client
-  /vercel/workpath0/db
-  /
-  /vercel/workpath0/db
-  /var/task
-You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block
-in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,
-but something went wrong. That's suboptimal.
-Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","clientVersion":"2.10.0-integration-nextjs-custom-output.7","stack":["Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block","in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,","but something went wrong. That's suboptimal.","","Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","    at Qw.request (/var/task/.next/serverless/pages/api/songs.js:11168:388)"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block","in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,","but something went wrong. That's suboptimal.","","Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
+{
+  engineConfig: {
+    cwd: '/var/task/node_modules/.prisma/client',
+    enableDebugLogs: false,
+    enableEngineDebugMode: undefined,
+    datamodelPath: '/var/task/node_modules/.prisma/client/schema.prisma',
+    prismaPath: undefined,
+    engineEndpoint: undefined,
+    generator: {
+      name: 'client',
+      provider: 'prisma-client-js',
+      output: '/vercel/workpath0/node_modules/@prisma/client',
+      binaryTargets: [],
+      previewFeatures: [],
+      config: {}
+    },
+    showColors: false,
+    logLevel: undefined,
+    logQueries: undefined,
+    flags: [],
+    clientVersion: '2.10.0-dev.20',
+    enableExperimental: [],
+    useUds: undefined
+  }
+}
+
+{"errorType":"Runtime.UnhandledPromiseRejection","errorMessage":"TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","reason":{"errorType":"TypeError","errorMessage":"Cannot destructure property 'nextauth' of 'query' as it is undefined.","stack":["TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","    at /var/task/node_modules/next-auth/dist/server/index.js:67:11","    at Generator.next (<anonymous>)","    at asyncGeneratorStep (/var/task/node_modules/next-auth/dist/server/index.js:48:103)","    at _next (/var/task/node_modules/next-auth/dist/server/index.js:50:194)","    at /var/task/node_modules/next-auth/dist/server/index.js:50:364","    at new Promise (<anonymous>)","    at /var/task/node_modules/next-auth/dist/server/index.js:50:97","    at /var/task/node_modules/next-auth/dist/server/index.js:342:22","    at new Promise (<anonymous>)","    at /var/task/node_modules/next-auth/dist/server/index.js:58:12"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
