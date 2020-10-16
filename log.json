@@ -1,53 +1,25 @@
-{
-  "errorType": "Runtime.UnhandledPromiseRejection",
-  "errorMessage": "Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.\nThis probably happens, because you built Prisma Client on a different platform.\n(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")\n\nSearched Locations:\n\n  /.prisma/client\n  /vercel/workpath0/db\n  /\n  /vercel/workpath0/db\n  /var/task\n\nYou already added the platform \"native\" to the \"generator\" block\nin the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,\nbut something went wrong. That's suboptimal.\n\nPlease create an issue at https://github.com/prisma/prisma-client-js/issues/new",
-  "reason": {
-    "errorType": "Error",
-    "errorMessage": "Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.\nThis probably happens, because you built Prisma Client on a different platform.\n(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")\n\nSearched Locations:\n\n  /.prisma/client\n  /vercel/workpath0/db\n  /\n  /vercel/workpath0/db\n  /var/task\n\nYou already added the platform \"native\" to the \"generator\" block\nin the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,\nbut something went wrong. That's suboptimal.\n\nPlease create an issue at https://github.com/prisma/prisma-client-js/issues/new",
-    "clientVersion": "2.10.0-integration-nextjs-custom-output.4",
-    "stack": [
-      "Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.",
-      "This probably happens, because you built Prisma Client on a different platform.",
-      "(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")",
-      "",
-      "Searched Locations:",
-      "",
-      "  /.prisma/client",
-      "  /vercel/workpath0/db",
-      "  /",
-      "  /vercel/workpath0/db",
-      "  /var/task",
-      "",
-      "You already added the platform \"native\" to the \"generator\" block",
-      "in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,",
-      "but something went wrong. That's suboptimal.",
-      "",
-      "Please create an issue at https://github.com/prisma/prisma-client-js/issues/new",
-      "    at qw.request (/var/task/.next/serverless/pages/api/songs.js:10960:388)"
-    ]
-  },
-  "promise": {},
-  "stack": [
-    "Runtime.UnhandledPromiseRejection: Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.",
-    "This probably happens, because you built Prisma Client on a different platform.",
-    "(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")",
-    "",
-    "Searched Locations:",
-    "",
-    "  /.prisma/client",
-    "  /vercel/workpath0/db",
-    "  /",
-    "  /vercel/workpath0/db",
-    "  /var/task",
-    "",
-    "You already added the platform \"native\" to the \"generator\" block",
-    "in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,",
-    "but something went wrong. That's suboptimal.",
-    "",
-    "Please create an issue at https://github.com/prisma/prisma-client-js/issues/new",
-    "    at process.<anonymous> (/var/runtime/index.js:35:15)",
-    "    at process.emit (events.js:327:22)",
-    "    at processPromiseRejections (internal/process/promises.js:209:33)",
-    "    at processTicksAndRejections (internal/process/task_queues.js:98:32)"
-  ]
-}
+{"errorType":"Runtime.UnhandledPromiseRejection","errorMessage":"Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
+This probably happens, because you built Prisma Client on a different platform.
+(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
+Searched Locations:
+  /.prisma/client
+  /vercel/workpath0/db
+  /
+  /vercel/workpath0/db
+  /var/task
+You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block
+in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,
+but something went wrong. That's suboptimal.
+Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","reason":{"errorType":"Error","errorMessage":"Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
+This probably happens, because you built Prisma Client on a different platform.
+(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
+Searched Locations:
+  /.prisma/client
+  /vercel/workpath0/db
+  /
+  /vercel/workpath0/db
+  /var/task
+You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block
+in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,
+but something went wrong. That's suboptimal.
+Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","clientVersion":"2.10.0-integration-nextjs-custom-output.7","stack":["Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block","in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,","but something went wrong. That's suboptimal.","","Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","    at Qw.request (/var/task/.next/serverless/pages/api/songs.js:11168:388)"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","You already added the platforms \"native\", \"rhel-openssl-1.0.x\" to the \"generator\" block","in the \"schema.prisma\" file as described in https://pris.ly/d/client-generator,","but something went wrong. That's suboptimal.","","Please create an issue at https://github.com/prisma/prisma-client-js/issues/new","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
