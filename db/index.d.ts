@@ -26,8 +26,8 @@ export { PrismaClientValidationError }
 export { sql, empty, join, raw, Sql }
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.4
- * Query Engine version: 855b4a81be577dc615caeacf2ea903dce8f47a6a
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.7
+ * Query Engine version: d19f8270692e0d82c3ae7e0e9a61a4cb514b6862
  */
 export declare type PrismaVersion = {
   client: string

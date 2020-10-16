@@ -26,12 +26,12 @@ const exists = promisify(fs.exists)
 const readdir = promisify(fs.readdir)
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.4
- * Query Engine version: 855b4a81be577dc615caeacf2ea903dce8f47a6a
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.7
+ * Query Engine version: d19f8270692e0d82c3ae7e0e9a61a4cb514b6862
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.4",
-  engine: "855b4a81be577dc615caeacf2ea903dce8f47a6a"
+  client: "2.10.0-integration-nextjs-custom-output.7",
+  engine: "d19f8270692e0d82c3ae7e0e9a61a4cb514b6862"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -151,7 +151,8 @@ const config = {
     "provider": "prisma-client-js",
     "output": "/home/will/Prisma/next-prisma/db",
     "binaryTargets": [
-      "native"
+      "native",
+      "rhel-openssl-1.0.x"
     ],
     "previewFeatures": [],
     "config": {},
@@ -159,8 +160,8 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.4",
-  "engineVersion": "855b4a81be577dc615caeacf2ea903dce8f47a6a"
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.7",
+  "engineVersion": "d19f8270692e0d82c3ae7e0e9a61a4cb514b6862"
 }
 config.document = dmmf
 config.dirname =  config.generator.output ? config.generator.output : __dirname
@@ -171,6 +172,7 @@ config.dirname =  config.generator.output ? config.generator.output : __dirname
 **/
 
 path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
+path.join(config.dirname, 'query-engine-rhel-openssl-1.0.x');
 // TODO Remove
 const dirExists = fs.existsSync(config.dirname)
 if (dirExists) {

@@ -458,17 +458,6 @@ declare namespace Debug {
     var enabled: (namespace: string) => boolean;
 }
 
-declare type LogLevel = 'info' | 'trace' | 'debug' | 'warn' | 'error' | 'query';
-interface RustLog {
-    timestamp: Date;
-    level: LogLevel;
-    target: string;
-    fields: LogFields;
-}
-declare type LogFields = {
-    [key: string]: any;
-};
-
 declare class PrismaClientKnownRequestError extends Error {
     code: string;
     meta?: object;
@@ -563,6 +552,7 @@ declare class NodeEngine {
     private socketPath?;
     private getConfigPromise?;
     private stopPromise?;
+    private beforeExitListener?;
     exitCode: number;
     /**
      * exiting is used to tell the .on('exit') hook, if the exit came from our script.
@@ -591,7 +581,8 @@ declare class NodeEngine {
     undici: Undici;
     constructor({ cwd, datamodelPath, prismaPath, generator, datasources, showColors, logLevel, logQueries, env, flags, clientVersion, enableExperimental, engineEndpoint, enableDebugLogs, enableEngineDebugMode, useUds, }: EngineConfig);
     private resolveCwd;
-    on(event: 'query' | 'info' | 'warn' | 'error', listener: (log: RustLog) => any): void;
+    on(event: 'query' | 'info' | 'warn' | 'error' | 'beforeExit', listener: (args?: any) => any): void;
+    emitExit(): Promise<void>;
     getPlatform(): Promise<Platform>;
     private getQueryEnginePath;
     private handlePanic;
@@ -654,7 +645,7 @@ interface PrismaClientOptions {
      * \`\`\`
      * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/logging#the-log-option).
      */
-    log?: Array<LogLevel$1 | LogDefinition>;
+    log?: Array<LogLevel | LogDefinition>;
     /**
      * @internal
      * You probably don't want to use this. \`__internal\` is used by internal tooling.
@@ -683,9 +674,9 @@ declare type HookParams = {
 declare type Hooks = {
     beforeRequest?: (options: HookParams) => any;
 };
-declare type LogLevel$1 = 'info' | 'query' | 'warn' | 'error';
+declare type LogLevel = 'info' | 'query' | 'warn' | 'error';
 declare type LogDefinition = {
-    level: LogLevel$1;
+    level: LogLevel;
     emit: 'stdout' | 'event';
 };
 interface GetPrismaClientOptions {
