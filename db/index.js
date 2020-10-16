@@ -26,11 +26,11 @@ const exists = promisify(fs.exists)
 const readdir = promisify(fs.readdir)
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.13
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.14
  * Query Engine version: 29cdf175d3b2f236fcc7b34ca27edda6d303ccea
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.13",
+  client: "2.10.0-integration-nextjs-custom-output.14",
   engine: "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
 }
 
@@ -56,6 +56,7 @@ exports.raw = raw
 **/
 
 path.join('/home/will/Prisma/next-prisma/db', 'query-engine-debian-openssl-1.1.x');
+path.join('/home/will/Prisma/next-prisma/db', 'query-engine-rhel-openssl-1.0.x');
 
 /**
  * Annotation for `node-file-trace`
@@ -162,7 +163,10 @@ const config = {
     "name": "client",
     "provider": "prisma-client-js",
     "output": "/home/will/Prisma/next-prisma/db",
-    "binaryTargets": [],
+    "binaryTargets": [
+      "native",
+      "rhel-openssl-1.0.x"
+    ],
     "previewFeatures": [],
     "config": {},
     "isCustomOutput": true
@@ -170,7 +174,7 @@ const config = {
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
   "outputDir": "/home/will/Prisma/next-prisma/db",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.13",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.14",
   "engineVersion": "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
 }
 config.document = dmmf
