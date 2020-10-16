@@ -1,6 +1,7 @@
 generator client {
   provider = "prisma-client-js"
   output= "../db"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 datasource db {
@@ -28,7 +29,7 @@ model Session {
   id           Int      @id @default(autoincrement())
   userId       Int
   user         User     @relation(fields: [userId])
-  expires      DateTime
+  expires      DateTime\
   sessionToken String   @unique
   accessToken  String   @unique
   createdAt    DateTime @default(now())
