@@ -19,13 +19,19 @@ const {
 const path = require('path')
 const debug = debugLib('prisma-client')
 
+// TODO Remove
+const fs = require('fs');
+const { promisify } = require('util')
+const exists = promisify(fs.exists)
+const readdir = promisify(fs.readdir)
+
 /**
- * Prisma Client JS version: 2.10.0-dev.20
- * Query Engine version: d19f8270692e0d82c3ae7e0e9a61a4cb514b6862
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.12
+ * Query Engine version: bbe3fb10dd80ef3667a35138c27fcf9eb4541d9f
  */
 exports.prismaVersion = {
-  client: "2.10.0-dev.20",
-  engine: "d19f8270692e0d82c3ae7e0e9a61a4cb514b6862"
+  client: "2.10.0-integration-nextjs-custom-output.12",
+  engine: "bbe3fb10dd80ef3667a35138c27fcf9eb4541d9f"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -49,12 +55,12 @@ exports.raw = raw
  * In order to make `ncc` and `node-file-trace` happy.
 **/
 
-path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
+path.join('/home/will/Prisma/next-prisma/db', 'query-engine-debian-openssl-1.1.x');
 
 /**
  * Annotation for `node-file-trace`
 **/
-path.join(__dirname, 'schema.prisma');
+path.join('/home/will/Prisma/next-prisma/db', 'schema.prisma');
 
 /**
  * Enums
@@ -163,11 +169,31 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-dev.20",
-  "engineVersion": "d19f8270692e0d82c3ae7e0e9a61a4cb514b6862"
+  "outputDir": "/home/will/Prisma/next-prisma/db",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.12",
+  "engineVersion": "bbe3fb10dd80ef3667a35138c27fcf9eb4541d9f"
 }
 config.document = dmmf
-config.dirname = __dirname
+config.dirname = '/home/will/Prisma/next-prisma/db'
+
+// TODO Remove
+const dirExists = fs.existsSync(config.dirname)
+if (dirExists) {
+  readdir(config.dirname).then((value) => {
+    value.forEach(v => {
+      console.log(v);
+    })
+  })
+} else {
+  console.log("Dir Could Not be found");
+}
+
+
+/**
+ * Annotation for `node-file-trace`
+**/
+path.join(config.dirname , 'schema.prisma');
+console.log(path.join(config.dirname , 'schema.prisma'))
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
