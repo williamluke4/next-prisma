@@ -1,27 +1,61 @@
 {
-  engineConfig: {
-    cwd: '/var/task/node_modules/.prisma/client',
-    enableDebugLogs: false,
-    enableEngineDebugMode: undefined,
-    datamodelPath: '/var/task/node_modules/.prisma/client/schema.prisma',
-    prismaPath: undefined,
-    engineEndpoint: undefined,
-    generator: {
-      name: 'client',
-      provider: 'prisma-client-js',
-      output: '/vercel/workpath0/node_modules/@prisma/client',
-      binaryTargets: [],
-      previewFeatures: [],
-      config: {}
-    },
-    showColors: false,
-    logLevel: undefined,
-    logQueries: undefined,
-    flags: [],
-    clientVersion: '2.10.0-dev.20',
-    enableExperimental: [],
-    useUds: undefined
-  }
-}
-
-{"errorType":"Runtime.UnhandledPromiseRejection","errorMessage":"TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","reason":{"errorType":"TypeError","errorMessage":"Cannot destructure property 'nextauth' of 'query' as it is undefined.","stack":["TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","    at /var/task/node_modules/next-auth/dist/server/index.js:67:11","    at Generator.next (<anonymous>)","    at asyncGeneratorStep (/var/task/node_modules/next-auth/dist/server/index.js:48:103)","    at _next (/var/task/node_modules/next-auth/dist/server/index.js:50:194)","    at /var/task/node_modules/next-auth/dist/server/index.js:50:364","    at new Promise (<anonymous>)","    at /var/task/node_modules/next-auth/dist/server/index.js:50:97","    at /var/task/node_modules/next-auth/dist/server/index.js:342:22","    at new Promise (<anonymous>)","    at /var/task/node_modules/next-auth/dist/server/index.js:58:12"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: TypeError: Cannot destructure property 'nextauth' of 'query' as it is undefined.","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
+  "errorType": "Runtime.UnhandledPromiseRejection",
+  "errorMessage":"Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
+This probably happens, because you built Prisma Client on a different platform.
+(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
+Files in /:
+  bin
+  boot
+  dev
+  etc
+  home
+  lib
+  lib64
+  media
+  mnt
+  opt
+  proc
+  root
+  run
+  sbin
+  srv
+  sys
+  tmp
+  usr
+  var
+To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:
+generator client {
+    provider      = \"prisma-client-js\"
+    binaryTargets = [\"native\"]
+    }
+Then run \"prisma generate\" for your changes to take effect.
+  Read more about deploying Prisma Client: https: //pris.ly/d/client-generator","reason":{"errorType":"Error","errorMessage":"Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
+  This probably happens, because you built Prisma Client on a different platform.
+  (Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
+  Files in /:
+    bin
+    boot
+    dev
+    etc
+    home
+    lib
+    lib64
+    media
+    mnt
+    opt
+    proc
+    root
+    run
+    sbin
+    srv
+    sys
+    tmp
+    usr
+    var
+  To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:
+  generator client {
+    provider      = \"prisma-client-js\"
+    binaryTargets = [\"native\"]
+      }
+Then run \"prisma generate\" for your changes to take effect.
+  Read more about deploying Prisma Client: https: //pris.ly/d/client-generator","clientVersion":"2.10.0-integration-nextjs-custom-output.12","stack":["Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Files in /:","","  bin","  boot","  dev","  etc","  home","  lib","  lib64","  media","  mnt","  opt","  proc","  root","  run","  sbin","  srv","  sys","  tmp","  usr","  var","","","To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:","generator client {","  provider      = \"prisma-client-js\"","  binaryTargets = [\"native\"]","}","","Then run \"prisma generate\" for your changes to take effect.","Read more about deploying Prisma Client: https://pris.ly/d/client-generator","    at Kw.request (/var/task/.next/serverless/pages/api/songs.js:11053:388)"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Files in /:","","  bin","  boot","  dev","  etc","  home","  lib","  lib64","  media","  mnt","  opt","  proc","  root","  run","  sbin","  srv","  sys","  tmp","  usr","  var","","","To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:","generator client {","  provider      = \"prisma-client-js\"","  binaryTargets = [\"native\"]","}","","Then run \"prisma generate\" for your changes to take effect.","Read more about deploying Prisma Client: https://pris.ly/d/client-generator","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
