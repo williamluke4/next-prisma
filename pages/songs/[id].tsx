@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../db';
 import { InferGetStaticPropsType } from "next";
 
 const prisma = new PrismaClient();
