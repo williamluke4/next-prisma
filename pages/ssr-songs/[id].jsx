@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { PrismaClient } from '../../db';
+import { PrismaClient } from '@prisma/client';
 
 export const getServerSideProps = async (ctx) => {
   const prisma = new PrismaClient();
