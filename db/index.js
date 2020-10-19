@@ -26,11 +26,11 @@ const exists = promisify(fs.exists)
 const readdir = promisify(fs.readdir)
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.14
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.15
  * Query Engine version: 29cdf175d3b2f236fcc7b34ca27edda6d303ccea
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.14",
+  client: "2.10.0-integration-nextjs-custom-output.15",
   engine: "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
 }
 
@@ -174,17 +174,11 @@ const config = {
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
   "outputDir": "/home/will/Prisma/next-prisma/db",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.14",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.15",
   "engineVersion": "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
 }
 config.document = dmmf
 config.dirname = '/home/will/Prisma/next-prisma/db'
-
-/**
- * Annotation for `node-file-trace`
-**/
-path.join(config.dirname , 'schema.prisma');
-console.log(path.join(config.dirname , 'schema.prisma'))
 
 // TODO Remove
 const dirExists = fs.existsSync(config.dirname)
