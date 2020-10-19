@@ -26,12 +26,12 @@ const exists = promisify(fs.exists)
 const readdir = promisify(fs.readdir)
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.15
- * Query Engine version: 29cdf175d3b2f236fcc7b34ca27edda6d303ccea
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.16
+ * Query Engine version: 013fea8c06f68ee01634987104fdd5c1dbeb412e
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.15",
-  engine: "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
+  client: "2.10.0-integration-nextjs-custom-output.16",
+  engine: "013fea8c06f68ee01634987104fdd5c1dbeb412e"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -174,8 +174,8 @@ const config = {
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
   "outputDir": "/home/will/Prisma/next-prisma/db",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.15",
-  "engineVersion": "29cdf175d3b2f236fcc7b34ca27edda6d303ccea"
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.16",
+  "engineVersion": "013fea8c06f68ee01634987104fdd5c1dbeb412e"
 }
 config.document = dmmf
 config.dirname = '/home/will/Prisma/next-prisma/db'
