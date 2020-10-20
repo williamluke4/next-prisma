@@ -19,19 +19,13 @@ const {
 const path = require('path')
 const debug = debugLib('prisma-client')
 
-// TODO Remove
-const fs = require('fs');
-const { promisify } = require('util')
-const exists = promisify(fs.exists)
-const readdir = promisify(fs.readdir)
-
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.17
- * Query Engine version: 42145bac61d11071762e796c9cff7298622cf1fc
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.18
+ * Query Engine version: 90b09acc5acf4c4bb915aa3041f21feec185b5c3
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.17",
-  engine: "42145bac61d11071762e796c9cff7298622cf1fc"
+  client: "2.10.0-integration-nextjs-custom-output.18",
+  engine: "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -55,13 +49,13 @@ exports.raw = raw
  * In order to make `ncc` and `node-file-trace` happy.
 **/
 
-path.join('/home/will/Prisma/next-prisma/db', 'query-engine-debian-openssl-1.1.x');
-path.join('/home/will/Prisma/next-prisma/db', 'query-engine-rhel-openssl-1.0.x');
+path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
+path.join(__dirname, 'query-engine-rhel-openssl-1.0.x');
 
 /**
  * Annotation for `node-file-trace`
 **/
-path.join('/home/will/Prisma/next-prisma/db', 'schema.prisma');
+path.join(__dirname, 'schema.prisma');
 
 /**
  * Enums
@@ -173,31 +167,11 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "outputDir": "/home/will/Prisma/next-prisma/db",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.17",
-  "engineVersion": "42145bac61d11071762e796c9cff7298622cf1fc"
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.18",
+  "engineVersion": "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
 }
 config.document = dmmf
-config.dirname = '/home/will/Prisma/next-prisma/db'
-
-// TODO Remove
-const dirExists = fs.existsSync(config.dirname)
-if (dirExists) {
-  readdir(config.dirname).then((value) => {
-    value.forEach(v => {
-      console.log(v);
-    })
-  })
-} else {
-  console.log("Dir Could Not be found");
-}
-
-
-/**
- * Annotation for `node-file-trace`
-**/
-path.join(config.dirname , 'schema.prisma');
-console.log(path.join(config.dirname , 'schema.prisma'))
+config.dirname = config.generator.output ? config.generator.output : __dirname
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
