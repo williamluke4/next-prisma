@@ -20,11 +20,11 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.18
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.19
  * Query Engine version: 90b09acc5acf4c4bb915aa3041f21feec185b5c3
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.18",
+  client: "2.10.0-integration-nextjs-custom-output.19",
   engine: "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
 }
 
@@ -151,7 +151,9 @@ exports.dmmf = JSON.parse(dmmfString)
 /**
  * Create the Client
  */
-
+function fixNextPath(anyPath){
+  return anyPath.replace('/vercel/workpath0', '/var/task')
+}
 const config = {
   "generator": {
     "name": "client",
@@ -167,11 +169,12 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.18",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.19",
   "engineVersion": "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
 }
 config.document = dmmf
-config.dirname = config.generator.output ? config.generator.output : __dirname
+config.dirname = config.generator.output ? fixNextPath(config.generator.output) : __dirname
+
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
