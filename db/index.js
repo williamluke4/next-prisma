@@ -11,6 +11,7 @@ const {
   debugLib,
   sqltag,
   sql,
+  Sql,
   empty,
   join,
   raw
@@ -20,12 +21,12 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.21
- * Query Engine version: 90b09acc5acf4c4bb915aa3041f21feec185b5c3
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.23
+ * Query Engine version: dfeb0875e102bf83bf9f130b5e20d8e6963f5a51
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.21",
-  engine: "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
+  client: "2.10.0-integration-nextjs-custom-output.23",
+  engine: "dfeb0875e102bf83bf9f130b5e20d8e6963f5a51"
 }
 
 exports.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -158,8 +159,8 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.21",
-  "engineVersion": "90b09acc5acf4c4bb915aa3041f21feec185b5c3"
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.23",
+  "engineVersion": "dfeb0875e102bf83bf9f130b5e20d8e6963f5a51"
 }
 config.document = dmmf
 config.dirname = config.generator.output ? fixNextPath(config.generator.output) : __dirname

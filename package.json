@@ -30,7 +30,7 @@
     "@chakra-ui/core": "0.8.0",
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
-    "@prisma/client": "2.10.0-integration-nextjs-custom-output.21",
+    "@prisma/client": "2.10.0-integration-nextjs-custom-output.23",
     "chokidar": "^3.4.3",
     "download": "^8.0.0",
     "emotion-theming": "10.0.27",
@@ -45,7 +45,7 @@
     "tempy": "^1.0.0"
   },
   "devDependencies": {
-    "@prisma/cli": "2.10.0-integration-nextjs-custom-output.21",
+    "@prisma/cli": "2.10.0-integration-nextjs-custom-output.23",
     "@types/download": "^6.2.4",
     "@types/next-auth": "^3.1.12",
     "@types/node": "^14.11.8",
