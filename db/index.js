@@ -22,11 +22,11 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.25
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.26
  * Query Engine version: 77abecc4840127ebdcc02b83ee1e2c9cc27009f2
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.25",
+  client: "2.10.0-integration-nextjs-custom-output.26",
   engine: "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 
@@ -143,12 +143,15 @@ exports.dmmf = JSON.parse(dmmfString)
 /**
  * Create the Client
  */
-function fixNextPath(anyPath){
+function fixNextPath(output){
   const re =  /\/vercel\/workpath0\/(?!node_modules)/g
-  if(anyPath && re.test(anyPath)){
+  if(output && re.test(output)){
     console.log("Fixing Path for NextJS")
-    return path.resolve(anyPath.replace('/vercel/workpath0/', './'))
+    return path.resolve(output.replace('/vercel/workpath0/', './'))
   } 
+  if(output){
+    return output
+  }
   return __dirname
 }
 const config = {
@@ -166,7 +169,7 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.25",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.26",
   "engineVersion": "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 config.document = dmmf
@@ -179,8 +182,7 @@ config.dirname = fixNextPath(config.generator.output)
 
 path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
 path.join(config.dirname, 'query-engine-rhel-openssl-1.0.x');
-path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
-path.join(__dirname, 'query-engine-rhel-openssl-1.0.x');
+
 /**
  * Annotation for `node-file-trace`
 **/
