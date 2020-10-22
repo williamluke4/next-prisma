@@ -22,11 +22,11 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.27
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.28
  * Query Engine version: 77abecc4840127ebdcc02b83ee1e2c9cc27009f2
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.27",
+  client: "2.10.0-integration-nextjs-custom-output.28",
   engine: "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 
@@ -47,7 +47,18 @@ exports.join = join
 exports.raw = raw
 
 
+/**
+ * Build tool annotations
+ * In order to make `ncc` and `node-file-trace` happy.
+**/
 
+path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
+path.join(__dirname, 'query-engine-rhel-openssl-1.0.x');
+
+/**
+ * Annotation for `node-file-trace`
+**/
+path.join(__dirname, 'schema.prisma');
 
 /**
  * Enums
@@ -143,17 +154,20 @@ exports.dmmf = JSON.parse(dmmfString)
 /**
  * Create the Client
  */
+
 function fixNextPath(output){
+  // Test if it is a custom output on next
   const re =  /\/vercel\/workpath0\/(?!node_modules)/g
   if(output && re.test(output)){
     console.log("Fixing Path for NextJS")
-    return path.resolve(output.replace('/vercel/workpath0/', './'))
+    return output.replace('/vercel/workpath0/', './')
   } 
   if(output){
     return output
   }
   return __dirname
 }
+
 const config = {
   "generator": {
     "name": "client",
@@ -169,24 +183,11 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.27",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.28",
   "engineVersion": "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 config.document = dmmf
 config.dirname = fixNextPath(config.generator.output)
-
-/**
- * Build tool annotations
- * In order to make `ncc` and `node-file-trace` happy.
-**/
-
-path.join(config.dirname, 'query-engine-debian-openssl-1.1.x');
-path.join(config.dirname, 'query-engine-rhel-openssl-1.0.x');
-
-/**
- * Annotation for `node-file-trace`
-**/
-path.join(config.dirname, 'schema.prisma');
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
