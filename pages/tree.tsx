@@ -10,6 +10,7 @@ export default (props) => {
       <Heading mt={8} mb={4} fontWeight="800">
         My Songs
       </Heading>
+      {tree && JSON.stringify(tree)}
       <List>
         {tree && tree.stdout}
       </List>
