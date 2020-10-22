@@ -28,7 +28,7 @@ export { Decimal }
 export { sql, empty, join, raw, Sql }
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.26
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.27
  * Query Engine version: 77abecc4840127ebdcc02b83ee1e2c9cc27009f2
  */
 export declare type PrismaVersion = {

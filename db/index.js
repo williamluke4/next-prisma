@@ -22,11 +22,11 @@ const path = require('path')
 const debug = debugLib('prisma-client')
 
 /**
- * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.26
+ * Prisma Client JS version: 2.10.0-integration-nextjs-custom-output.27
  * Query Engine version: 77abecc4840127ebdcc02b83ee1e2c9cc27009f2
  */
 exports.prismaVersion = {
-  client: "2.10.0-integration-nextjs-custom-output.26",
+  client: "2.10.0-integration-nextjs-custom-output.27",
   engine: "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 
@@ -169,7 +169,7 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "../prisma",
-  "clientVersion": "2.10.0-integration-nextjs-custom-output.26",
+  "clientVersion": "2.10.0-integration-nextjs-custom-output.27",
   "engineVersion": "77abecc4840127ebdcc02b83ee1e2c9cc27009f2"
 }
 config.document = dmmf
