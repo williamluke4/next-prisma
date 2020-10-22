@@ -1,31 +1,44 @@
-{"errorType":"Runtime.UnhandledPromiseRejection","errorMessage":"Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
-This probably happens, because you built Prisma Client on a different platform.
-(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
-Searched Locations:
-  /.prisma/client
-  /vercel/workpath0/db
-  /
-  /vercel/workpath0/db
-  /var/task
-To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:
-generator client {
-    provider      = \"prisma-client-js\"
-    binaryTargets = [\"native\"]
-  }
-Then run \"prisma generate\" for your changes to take effect.
-  Read more about deploying Prisma Client: https://pris.ly/d/client-generator","reason":{"errorType":"Error","errorMessage":"Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.
-  This probably happens, because you built Prisma Client on a different platform.
-  (Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")
-  Searched Locations:
-    /.prisma/client
-    /vercel/workpath0/db
-    /
-    /vercel/workpath0/db
-    /var/task
-  To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:
-  generator client {
-    provider      = \"prisma-client-js\"
-    binaryTargets = [\"native\"]
-  }
-Then run \"prisma generate\" for your changes to take effect.
-  Read more about deploying Prisma Client: https://pris.ly/d/client-generator","clientVersion":"2.10.0-integration-nextjs-custom-output.13","stack":["Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","","To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:","generator client {","  provider      = \"prisma-client-js\"","  binaryTargets = [\"native\"]","}","","Then run \"prisma generate\" for your changes to take effect.","Read more about deploying Prisma Client: https://pris.ly/d/client-generator","    at Qw.request (/var/task/.next/serverless/pages/api/songs.js:11059:388)"]},"promise":{},"stack":["Runtime.UnhandledPromiseRejection: Error: Query engine binary for current platform \"rhel-openssl-1.0.x\" could not be found.","This probably happens, because you built Prisma Client on a different platform.","(Prisma Client looked in \"/query-engine-rhel-openssl-1.0.x\")","","Searched Locations:","","  /.prisma/client","  /vercel/workpath0/db","  /","  /vercel/workpath0/db","  /var/task","","","To solve this problem, add the platform \"rhel-openssl-1.0.x\" to the \"generator\" block in the \"schema.prisma\" file:","generator client {","  provider      = \"prisma-client-js\"","  binaryTargets = [\"native\"]","}","","Then run \"prisma generate\" for your changes to take effect.","Read more about deploying Prisma Client: https://pris.ly/d/client-generator","    at process.<anonymous> (/var/runtime/index.js:35:15)","    at process.emit (events.js:327:22)","    at processPromiseRejections (internal/process/promises.js:209:33)","    at processTicksAndRejections (internal/process/task_queues.js:98:32)"]}
+"51\t/var/task/.next/serverless/pages/api
+51\t/var/task/.next/serverless/pages
+51\t/var/task/.next/serverless
+51\t/var/task/.next
+221\t/var/task/node_modules/.prisma/client
+221\t/var/task/node_modules/.prisma
+4\t/var/task/node_modules/@next/env/dist
+5\t/var/task/node_modules/@next/env
+5\t/var/task/node_modules/@next
+250\t/var/task/node_modules/@prisma/client/runtime
+255\t/var/task/node_modules/@prisma/client
+255\t/var/task/node_modules/@prisma
+5\t/var/task/node_modules/cross-spawn/lib/util
+9\t/var/task/node_modules/cross-spawn/lib
+13\t/var/task/node_modules/cross-spawn
+4\t/var/task/node_modules/end-of-stream
+12\t/var/task/node_modules/execa/lib
+4\t/var/task/node_modules/execa/node_modules/get-stream
+2\t/var/task/node_modules/execa/node_modules/is-stream
+6\t/var/task/node_modules/execa/node_modules
+26\t/var/task/node_modules/execa
+8\t/var/task/node_modules/human-signals/build/src
+8\t/var/task/node_modules/human-signals/build
+10\t/var/task/node_modules/human-signals
+5\t/var/task/node_modules/isexe
+2\t/var/task/node_modules/merge-stream
+2\t/var/task/node_modules/mimic-fn
+653\t/var/task/node_modules/next/dist/compiled
+40\t/var/task/node_modules/next/dist/next-server
+693\t/var/task/node_modules/next/dist
+699\t/var/task/node_modules/next
+2\t/var/task/node_modules/npm-run-path
+2\t/var/task/node_modules/once
+3\t/var/task/node_modules/onetime
+2\t/var/task/node_modules/path-key
+4\t/var/task/node_modules/pump
+2\t/var/task/node_modules/shebang-command
+2\t/var/task/node_modules/shebang-regex
+7\t/var/task/node_modules/signal-exit
+2\t/var/task/node_modules/strip-final-newline
+5\t/var/task/node_modules/which
+2\t/var/task/node_modules/wrappy
+1269\t/var/task/node_modules
+1333\t/var/task"
