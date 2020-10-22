@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "db": "dotenv -- prisma studio --experimental",
     "doctor": "dotenv -- prisma doctor",
