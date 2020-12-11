@@ -1,9 +1,7 @@
 import execa from 'execa';
-import path from 'path';
 
 export default async function handle(req, res) {
-  const { stdout: atPrisma } = await execa('ls', ['-a'], { cwd: '/var/task/node_modules/@prisma/client'});
-  const { stdout: dotPrisma } = await execa('ls', ['-a'], { cwd: '/var/task/node_modules/.prisma/client'});
+  const { stdout: dbParent } = await execa('ls', ['-a'], { cwd: '/var/db' });
 
-  return res.json({atPrisma, dotPrisma});
+  return res.json({ dbParent });
 }

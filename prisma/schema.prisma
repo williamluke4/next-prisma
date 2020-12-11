@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
@@ -11,7 +11,6 @@ datasource db {
 model Account {
   id                 Int       @id @default(autoincrement())
   userId             Int
-  user               User      @relation(fields: [userId])
   providerType       String
   providerId         String
   providerAccountId  String
@@ -20,19 +19,20 @@ model Account {
   accessTokenExpires DateTime?
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
 
-  @@unique([providerId, providerAccountId])
+  @@unique([providerId, providerAccountId], name: "Account.providerId_providerAccountId_unique")
 }
 
 model Session {
   id           Int      @id @default(autoincrement())
   userId       Int
-  user         User     @relation(fields: [userId])
-  expires      DateTime 
+  expires      DateTime
   sessionToken String   @unique
   accessToken  String   @unique
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -40,11 +40,11 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-  accounts      Account[]
-  sessions      Session[]
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
 }
 
 model VerificationRequest {

@@ -3,7 +3,7 @@ import { klona } from 'klona';
 import LRU from 'lru-cache';
 import { CreateUserError } from 'next-auth/dist/lib/errors';
 import logger from 'next-auth/dist/lib/logger';
-import { PrismaClient, PrismaClientOptions } from './db';
+import { PrismaClient, PrismaClientOptions } from '@prisma/client';
 
 const sessionCache = new LRU({
   maxAge: 24 * 60 * 60 * 1000,
@@ -16,6 +16,45 @@ const userCache = new LRU({
 })
 type Client = PrismaClient<PrismaClientOptions, never>;
 type Remove = "$on" | "on" | "$connect" | "connect" | "$disconnect" | "disconnect" | "$use" | "$executeRaw" | "executeRaw" | "$queryRaw" | "queryRaw";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 type ModelKeys = keyof Omit<Client, Remove>
 interface Config {

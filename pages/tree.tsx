@@ -11,9 +11,7 @@ export default (props) => {
         My Songs
       </Heading>
       {tree && JSON.stringify(tree)}
-      <List>
-        {tree && tree.stdout}
-      </List>
+      <List>{tree && tree.stdout}</List>
     </>
   );
 };
